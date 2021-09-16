@@ -19,3 +19,4 @@ public class MangaServiceImpl implements MangaService{
         return repository.findAll();
     }
 }
+
