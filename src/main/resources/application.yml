@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/spring-demo
     username: postgres
-    password: root
+    password: louis14
   jpa:
     hibernate:
       ddlauto: update
