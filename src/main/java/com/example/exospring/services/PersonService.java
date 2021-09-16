@@ -8,4 +8,6 @@ public interface PersonService {
     List<Person> findAll();
 
     Person findById(Long id);
+
+    Person findByName(String name);
 }

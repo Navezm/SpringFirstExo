@@ -13,5 +13,9 @@
         <h2>${item.name} ${item.surname}</h2>
         <h3>Date of birth: ${item.birthDate}</h3>
     </#list>
+
+
+    <h1>User by Name:</h1>
+    <h2>${person.id} ${person.name} ${person.surname}</h2>
 </body>
 </html>

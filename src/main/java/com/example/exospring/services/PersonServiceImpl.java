@@ -23,4 +23,9 @@ public class PersonServiceImpl implements PersonService{
     public Person findById(Long id) {
         return repository.findById(id).get();
     }
+
+    @Override
+    public Person findByName(String name){
+        return this.repository.findByName(name);
+    }
 }

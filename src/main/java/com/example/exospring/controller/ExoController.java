@@ -24,7 +24,10 @@ public class ExoController {
     public String homeAction(Model model) {
         List<Person> persons = personService.findAll();
 
+        Person person = personService.findByName("Navez");
+
         model.addAttribute("persons", persons);
+        model.addAttribute("person", person);
 
         return "model/home";
     }
