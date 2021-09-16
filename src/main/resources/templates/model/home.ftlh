@@ -17,5 +17,13 @@
 
     <h1>User by Name:</h1>
     <h2>${person.id} ${person.name} ${person.surname}</h2>
+
+    <h1>Mangas</h1>
+    <#list mangas as item>
+        <h3>${item.title}</h3>
+        <h3>genre: ${item.genre}</h3>
+        <img src="${item.imgSrc}">
+
+    </#list>
 </body>
 </html>
