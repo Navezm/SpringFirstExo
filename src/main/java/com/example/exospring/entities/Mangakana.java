@@ -27,5 +27,7 @@ public class Mangakana {
     private LocalDate birthDate;
 
     @ManyToMany
+    @Getter
+    @Setter
     private Set<Manga> mangas = new HashSet<>();
 }

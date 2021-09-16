@@ -18,5 +18,10 @@ public class MangaServiceImpl implements MangaService{
     public List<Manga> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public Manga insert(Manga manga) {
+        return repository.save(manga);
+    }
 }
 

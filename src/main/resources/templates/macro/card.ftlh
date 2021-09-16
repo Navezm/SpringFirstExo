@@ -1,5 +1,5 @@
 <#macro card data>
-    <div class="col s6 m7">
+    <div class="col s6">
         <div class="card horizontal">
             <div class="card-image">
                 <img src="${data.imgSrc}">

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface MangaService {
     List<Manga> findAll();
+    Manga insert(Manga manga);
 }

@@ -1,4 +1,4 @@
-<#macro layout>
+<#macro layout js="">
     <!doctype html>
     <html lang="en">
     <head>
@@ -15,9 +15,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </head>
     <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Add Manga</a></li>
+            </ul>
+        </nav>
         <div class="container">
             <#nested />
         </div>
+
+    ${js}
     </body>
     </html>
 </#macro>
