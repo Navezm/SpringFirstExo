@@ -19,6 +19,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/create">Add Manga</a></li>
+                <li><a href="/addLibrary">Add Library</a></li>
             </ul>
         </nav>
         <div class="container">
