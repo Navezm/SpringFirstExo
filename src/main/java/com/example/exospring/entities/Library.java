@@ -11,13 +11,14 @@ import java.util.List;
 public class Library {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
     private Long id;
 
     @Getter
     @Setter
     private String name;
 
-    @OneToMany
+    @ManyToMany
     @Getter
     @Setter
     private List<Manga> mangas = new ArrayList<>();

@@ -3,7 +3,6 @@ package com.example.exospring.controller;
 import com.example.exospring.entities.Library;
 import com.example.exospring.entities.Manga;
 import com.example.exospring.models.forms.LibraryForm;
-import com.example.exospring.repositories.LibraryRepository;
 import com.example.exospring.services.LibraryService;
 import com.example.exospring.services.MangaService;
 import org.springframework.stereotype.Controller;

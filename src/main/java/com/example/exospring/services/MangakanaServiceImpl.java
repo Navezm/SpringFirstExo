@@ -1,5 +1,6 @@
 package com.example.exospring.services;
 
+import com.example.exospring.entities.Manga;
 import com.example.exospring.entities.Mangakana;
 import com.example.exospring.repositories.MangakanaRepository;
 import org.springframework.stereotype.Service;
@@ -17,5 +18,10 @@ public class MangakanaServiceImpl implements MangakanaService{
     @Override
     public List<Mangakana> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<Mangakana> findAllByManga(Manga manga) {
+        return repository.findAllByMangasIsContaining(manga);
     }
 }

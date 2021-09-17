@@ -7,16 +7,15 @@
             <label>Name</label>
             <input type="text" name="name" id="name">
         </div>
+        <#--     List of Mangas    -->
         <#list mangas as item>
             <p>
                 <label>
-                    <input type="checkbox" />
+                    <input name="mangas" type="checkbox" value="${item.id}"/>
                     <span>${item.title}</span>
                 </label>
             </p>
         </#list>
-
-        <#--   Have multiple choices to add some mangas    -->
         <button type="submit" class="btn">Submit</button>
     </form>
 
