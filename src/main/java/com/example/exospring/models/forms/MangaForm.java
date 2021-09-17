@@ -1,5 +1,6 @@
 package com.example.exospring.models.forms;
 
+import com.example.exospring.entities.Library;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,4 +20,8 @@ public class MangaForm {
     @Getter
     @Setter
     private String imgSrc;
+
+    @Getter
+    @Setter
+    private Library library;
 }

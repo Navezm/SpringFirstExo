@@ -23,7 +23,7 @@
         </div>
         <#if libraries?? >
             <div class="input-field">
-                <select class="">
+                <select name="library" class="">
                     <option value="" disabled selected>Add to a library</option>
                     <#list libraries as item>
                         <option value="${item.id}">${item.name}</option>

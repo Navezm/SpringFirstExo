@@ -61,7 +61,16 @@ public class MangaController {
         toInsert.setGenre(mangaForm.getGenre());
         toInsert.setImgSrc(mangaForm.getImgSrc());
 
+
+        List<Manga> mangas = mangaForm.getLibrary().getMangas();
+        mangas.add(toInsert);
+        Library toInsertLibrary = new Library();
+        toInsertLibrary.setMangas(mangas);
+        toInsertLibrary.setId(mangaForm.getLibrary().getId());
+        toInsertLibrary.setName(mangaForm.getLibrary().getName());
+
         mangaService.insert(toInsert);
+        libraryService.insert(toInsertLibrary);
         return "redirect:/create";
     }
 
