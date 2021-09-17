@@ -15,7 +15,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </head>
     <body>
-        <nav>
+        <nav class="blue-grey lighten-2">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/create">Add Manga</a></li>
