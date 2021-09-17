@@ -1,4 +1,5 @@
 <#include '../layout.ftlh'>
+    <#import '/spring.ftl' as spring>
 
 <#assign js >
     <script>
@@ -21,6 +22,7 @@
             <label>Image</label>
             <input type="text" name="imgSrc" id="imgSrc">
         </div>
+
         <#if libraries?? >
             <div class="input-field">
                 <select name="library" class="">

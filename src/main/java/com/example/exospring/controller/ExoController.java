@@ -4,6 +4,7 @@ import com.example.exospring.entities.Article;
 import com.example.exospring.entities.Person;
 import com.example.exospring.services.ArticleService;
 import com.example.exospring.services.PersonService;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +34,7 @@ public class ExoController {
         return "model/home";
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping(path = {"/article"})
     public String articleAction(Model model) {
         List<Article> articles = articleService.findAll();

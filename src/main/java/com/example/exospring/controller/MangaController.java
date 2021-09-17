@@ -7,6 +7,7 @@ import com.example.exospring.models.forms.MangaForm;
 import com.example.exospring.services.LibraryService;
 import com.example.exospring.services.MangaService;
 import com.example.exospring.services.MangakanaService;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,6 +46,7 @@ public class MangaController {
         return "model/home";
     }
 
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @GetMapping(path = {"/create"})
     public String createAction(Model model){
         List<Library> libraries = libraryService.findAll();
@@ -61,16 +63,19 @@ public class MangaController {
         toInsert.setGenre(mangaForm.getGenre());
         toInsert.setImgSrc(mangaForm.getImgSrc());
 
+        if (mangaForm.getLibrary() != null) {
+            List<Manga> mangas = mangaForm.getLibrary().getMangas();
+            mangas.add(toInsert);
+            Library toInsertLibrary = new Library();
+            toInsertLibrary.setMangas(mangas);
+            toInsertLibrary.setId(mangaForm.getLibrary().getId());
+            toInsertLibrary.setName(mangaForm.getLibrary().getName());
+            mangaService.insert(toInsert);
+            libraryService.insert(toInsertLibrary);
+        } else {
+            mangaService.insert(toInsert);
+        }
 
-        List<Manga> mangas = mangaForm.getLibrary().getMangas();
-        mangas.add(toInsert);
-        Library toInsertLibrary = new Library();
-        toInsertLibrary.setMangas(mangas);
-        toInsertLibrary.setId(mangaForm.getLibrary().getId());
-        toInsertLibrary.setName(mangaForm.getLibrary().getName());
-
-        mangaService.insert(toInsert);
-        libraryService.insert(toInsertLibrary);
         return "redirect:/create";
     }
 

@@ -22,22 +22,22 @@
 
     <h1>Mangas</h1>
 
-    <div class="row">
-        <#list mangas as item>
-                <@card item>
-
-                </@card>
-        </#list>
-    </div>
 <#--    <div class="row">-->
-<#--        <#list map as item, mangakanas>-->
-<#--            <@card item.imgSrc>-->
-<#--                <h5>Title: ${item.title}</h5>-->
-<#--                <h5>Genre: ${item.genre}</h5>-->
-<#--                <h5>Author: <#list mangakanas as mangakana>${mangakana.name}<#if mangakana_has_next>, </#if></#list></h5>-->
-<#--            </@card>-->
+<#--        <#list mangas as item>-->
+<#--                <@card item>-->
+<#--                    -->
+<#--                </@card>-->
 <#--        </#list>-->
 <#--    </div>-->
+    <div class="row">
+        <#list map as item, mangakanas>
+            <@card item.imgSrc>
+                <h5>Title: ${item.title}</h5>
+                <h5>Genre: ${item.genre}</h5>
+                <h5>Author: <#list mangakanas as mangakana>${mangakana.name}<#if mangakana_has_next>, </#if></#list></h5>
+            </@card>
+        </#list>
+    </div>
 
     <h1>Mangakana</h1>
     <#list mangakanas as item>

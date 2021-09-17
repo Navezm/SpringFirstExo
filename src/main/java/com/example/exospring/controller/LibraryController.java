@@ -5,6 +5,7 @@ import com.example.exospring.entities.Manga;
 import com.example.exospring.models.forms.LibraryForm;
 import com.example.exospring.services.LibraryService;
 import com.example.exospring.services.MangaService;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ public class LibraryController {
         this.mangaService = mangaService;
     }
 
+    @Secured({"ROLE_ADMIN"})
     @GetMapping(path = {"/addLibrary"})
     public String getLibrary(Model model){
         List<Library> libraries = service.findAll();
